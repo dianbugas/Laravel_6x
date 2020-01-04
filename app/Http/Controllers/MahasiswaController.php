@@ -14,9 +14,9 @@ class MahasiswaController extends Controller
      */
     public function index()
     {
-        // $mahasiswa = DB::table('mahasiswa')->get();
-        // dump($mahasiswa);
-        // return view('mahasiswa.index'); 
+        $mahasiswa = DB::table('mahasiswa')->get();
+        dd($mahasiswa); klu laravel seperti ini
+        return view('mahasiswa.index'); 
     }
 
     /**
@@ -46,18 +46,18 @@ class MahasiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show()
     {
-        $posts = \DB::table('posts')->where('slug', $slug)->first();
-        dd($posts);
+        // $posts = \DB::table('posts')->where('slug', $slug)->first();
+        // dd($posts);
 
-        if(! array_key_exists($post, $posts)){
-            about(404, 'data yang di cari tidak aada');
-        }
+        // if(! array_key_exists($post, $posts)){
+        //     about(404, 'data yang di cari tidak aada');
+        // }
  
-        return view('post')->with([
-            'post' => $posts[$post]
-        ]);
+        // return view('post')->with([
+        //     'post' => $posts[$post]
+        // ]);
     }
 
     /**
